@@ -1,0 +1,15 @@
+<div class="header">
+  <img
+    src="https://goneutrinos.com/wp-content/uploads/2022/06/Neutrinos-Color-logo.png"
+    alt=""
+  />
+  <h4 class="mat-h2">Annual Day 2023!</h4>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <formly-form [form]="form" [model]="model" [fields]="fields"> </formly-form>
+
+  <button type="submit" color="primary" mat-raised-button>Submit</button>
+
+  <button type="reset" color="warn" mat-raised-button>Reset</button>
+</form>
