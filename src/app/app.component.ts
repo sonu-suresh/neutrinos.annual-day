@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {FormGroup} from '@angular/forms';
-import {FormlyFieldConfig} from '@ngx-formly/core';
+import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { FormlyFieldConfig } from '@ngx-formly/core';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +12,44 @@ export class AppComponent {
   model = {};
   fields: FormlyFieldConfig[] = [
     {
-      key: 'select',
+      key: 'name',
+      type: 'input',
+      props: {
+        label: 'Name ',
+        placeholder: 'Enter full name',
+        required: true,
+
+      },
+    },
+    {
+      key: 'department',
+      type: 'select',
+      props: {
+        label: 'Department',
+        placeholder: 'Select department',
+        required: true,
+        options: [
+          { label: 'Product', value: 'Product' },
+          { label: 'Product Implementation', value: 'ProductImplementation' },
+          { label: 'Technology Services', value: 'technologyServices' },
+          { label: 'Solutions', value: 'solutions' },
+          { label: 'Tech Venture', value: 'techVenture' },
+          { label: 'HR', value: 'humanResource' },
+          { label: 'Finance', value: 'finance' },
+          { label: 'Operations', value: 'operations' },
+          { label: 'Sales', value: 'sales' },
+          { label: 'Pre-Sales', value: 'pre-sales' },
+          { label: 'Marketing/Distribution', value: 'marketing' },
+          { label: 'Alliance', value: 'alliance' },
+        ],
+      },
+    },
+    {
+      key: 'attending',
       type: 'select',
       props: {
         label: 'Are you attending the event?',
-        placeholder: 'Select placeholder',
+        placeholder: 'yes/no',
         required: true,
         options: [
           { label: 'Yes', value: 'yes' },
@@ -25,26 +58,16 @@ export class AppComponent {
       },
     },
     {
-      key: 'radio',
+      key: 'mode',
       type: 'select',
       props: {
         label: 'Would you be attending online or offline? ',
-        placeholder: 'Input placeholder',
+        placeholder: 'offline/online',
         required: true,
         options: [
           { label: 'Online', value: 'online' },
           { label: 'Offline', value: 'offline' },
         ]
-      },
-    },
-    {
-      key: 'name',
-      type: 'input',
-      props: {
-        label: 'Name ',
-        placeholder: 'Enter full name',
-        required: true,
-       
       },
     },
     {
@@ -54,7 +77,7 @@ export class AppComponent {
         label: 'Employee Number',
         placeholder: 'Enter employee number',
         required: true,
-       
+
       },
     },
     {
@@ -92,9 +115,9 @@ export class AppComponent {
       type: 'textarea',
       props: {
         label: 'Preffered area of drop',
-        placeholder: 'Preffered area of drop',
+        placeholder: 'office or on the way back to office',
         required: false,
-        
+
       },
     },
     // {
